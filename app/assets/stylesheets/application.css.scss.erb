@@ -15,6 +15,28 @@
  */
 @import 'bootstrap';
 
+header {
+  .navbar-default {
+    background-color: #FFF;
+  }
+
+  form {
+    .input-group-addon {
+      position: relative;
+      background-color: #FFF;
+      border-right: 0px;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+    }
+    input[type=text] {
+      position: relative;
+      border-left: 0px;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+  }
+}
+
 body {
     position: relative;
     font-size: 16px;
@@ -24,4 +46,13 @@ footer {
   position: relative;
   margin-top: 80px;
   margin-bottom: 0px !important;
+}
+
+footer {
+  position: relative;
+
+  i {
+    position: relative;
+    font-size: 24px;
+  }
 }
