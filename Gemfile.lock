@@ -154,6 +154,14 @@ GEM
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     pg (1.1.4)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    pry-byebug (3.7.0)
+      byebug (~> 11.0)
+      pry (~> 0.10)
+    pry-rails (0.3.9)
+      pry (>= 0.10.4)
     public_suffix (3.1.1)
     puma (3.12.1)
     rack (2.0.7)
@@ -289,6 +297,8 @@ DEPENDENCIES
   kaminari-bootstrap
   listen (>= 3.0.5, < 3.2)
   pg
+  pry-byebug
+  pry-rails
   puma (~> 3.11)
   rails (~> 5.2.3)
   rails-erd

@@ -49,6 +49,8 @@ group :development, :test do
   gem 'awesome_print'
   gem 'sqlite3'
   gem 'rails-erd'
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :development do

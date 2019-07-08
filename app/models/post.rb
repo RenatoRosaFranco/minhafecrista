@@ -7,6 +7,13 @@ class Post < ApplicationRecord
   self.table_name  = 'posts'
   self.primary_key = 'id'
 
+  scope :by_title,    ->(title) { where('title like ?', title) }
+  scope :lasts,       ->{order(created_at: :asc) }
+  scope :recents,     ->{order(created_at: :desc) }
+  scope :by_tags,     ->(tag) { where('tags like ?', tag) }
+  scope :by_user,     ->(user) { where(user: user) }
+  scope :by_category, ->(category) { where(category: category) }
+
   belongs_to :category
   belongs_to :user
 

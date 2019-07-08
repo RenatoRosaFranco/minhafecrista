@@ -4,8 +4,15 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show]
 
   def index
+     @posts = Post.all
+
+     if (params[:category])
+        category = Category.where(name: params[:category]).first
+        @posts = category.posts.page(params[:page]).per(2)
+     end
+
     @tags = Post.mount_tags_collection
-    @posts = Post.all.page(params[:page]).per(2)
+    @posts.page(params[:page]).per(2)
     respond_with(@posts)
   end
 

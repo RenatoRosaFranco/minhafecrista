@@ -75,7 +75,9 @@
             </div>
             <ul class="list-unstyled">
               <% Category.all.limit(5).each do |category| %>
-                <li class="list-group-item"><%= link_to category.name, posts_path(category: category.name) %></li>
+                <li class="list-group-item">
+                  <span class="badge"><%= Post.by_category(category).count %></span>
+                  <%= link_to category.name, posts_path(category: category.name) %></li>
               <% end %>
             </ul>
           </div>
