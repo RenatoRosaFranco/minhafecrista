@@ -29,6 +29,7 @@ gem 'bootstrap-sass'
 gem 'responders'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
+gem 'rails_admin'
 gem 'friendly_id'
 gem 'devise'
 gem 'pg'
@@ -46,7 +47,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'better_errors'
   gem 'awesome_print'
-  gem 'rails_admin'
   gem 'sqlite3'
 end
 
