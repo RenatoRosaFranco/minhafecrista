@@ -30,6 +30,14 @@
         </div>
       <% end %>
 
+        <% if @posts.empty? %>
+        <div class='well'>
+          <p class="text-center">
+            Nenhuma postagem foi encontrada.
+          </p>
+        </div>
+          <% end %>
+
         <div class="col-md-12">
           <div class="text-center">
             <%= paginate(@posts) %>
