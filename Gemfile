@@ -32,6 +32,7 @@ gem 'kaminari-bootstrap'
 gem 'rails_admin'
 gem 'friendly_id'
 gem 'devise'
+gem 'alertifyjs-rails'
 gem 'pg'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

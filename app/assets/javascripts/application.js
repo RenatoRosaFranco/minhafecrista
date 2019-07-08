@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require bootstrap
+//= require alertify
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks

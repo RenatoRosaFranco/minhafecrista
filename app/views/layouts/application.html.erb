@@ -11,6 +11,7 @@
     <script type="text/javascript"><%= yield :js %></script>
     <script src="https://kit.fontawesome.com/5165849ba2.js"></script>
     <script src="https://wchat.freshchat.com/js/widget.js"></script>
+    <%= alertify_flash(wait: 20) %>
   </head>
   <body class="<%= controller.controller_name %>">
     <%= render partial: 'layouts/header' %>
