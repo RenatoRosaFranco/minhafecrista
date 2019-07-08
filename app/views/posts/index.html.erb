@@ -1,0 +1,122 @@
+<% provide :title, 'Postagens' %>
+
+<div class="container" style="margin-top: 80px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-12">
+        <div class="col-md-12">
+          <ul class="breadcrumb">
+            <li><%= link_to 'Home', root_path %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+      <% @posts.each do |post| %>
+        <div class="col-md-12">
+          <div class="panel panel-default">
+          <div class="jumbotron" style="margin-bottom: -20px;">
+
+          </div>
+          <ul class="list-unstyled" style="padding: 20px;">
+            <li><h1><%= link_to post.title, post_path(post) %></h1></li>
+            <li><p><%= post.description %></p></li>
+            <li>
+              <%= link_to 'Ver Mais', post_path(post), class: 'btn btn-primary btn-lg top' %>
+              <%= link_to 'Compartilhar','', class: 'btn btn-primary btn-lg top' %>
+            </li>
+          </ul>
+          </div>
+        </div>
+      <% end %>
+
+        <div class="col-md-12">
+          <div class="text-center">
+            <%= paginate(@posts) %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="bold">BUSCAR</h4>
+            </div>
+
+            <div style="padding: 20px;">
+            <%= form_for(:search) do |f| %>
+              <div class="field">
+                <div class="input-group">
+                <%= f.text_field :name, class: 'form-control', required: 'required',
+                placeholder: 'Faça sua Busca...', autocomplete: 'off' %>
+                  <div class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>CATEGORIAS</h4>
+            </div>
+            <ul class="list-unstyled">
+              <% Category.all.limit(5).each do |category| %>
+                <li class="list-group-item"><%= link_to category.name, posts_path(category: category.name) %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class='panel-heading'>
+              <h4>ULTIMAS POSTAGENS</h4>
+            </div>
+            <ul class="list-unstyled">
+              <% @posts.order(created_at: :desc).limit(5).each do |post| %>
+                <li class="list-group-item"><%= link_to post.title, post_path(post) %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4><i class="fas fa-tags"></i> TAGS</h4>
+            </div>
+            <ul class="list-unstyled" style="padding: 20px;">
+              <% @tags.take(30).each do |tag| %>
+                <span class="badge">
+                  <i class="fas fa-tags"></i> <%= tag %></span>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="newsletter">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+          <h2>Mantenha-se atualizado.</h2>
+          <p>Inscreva-se em nossa newsletter e receba
+            nosso conteudo automaticamente</p>
+          <br>
+
+          <%= render partial: 'shared/newsletter' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

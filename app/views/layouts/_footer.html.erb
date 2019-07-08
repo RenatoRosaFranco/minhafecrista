@@ -1,0 +1,65 @@
+<footer class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-3">
+          <h2><strong>Minha Fé Cristã</strong></h2>
+          <p style="font-size: 15px;">" Ter fé é assinar uma folha em branco e deixar que Deus
+          escreva nela o que quiser. "</p>
+        </div>
+
+        <div class="col-md-5 text-center">
+          <h4><strong>SITEMAP</strong></h4>
+          <ul class="list-unstyled list-inline">
+          <% Category.all.each do |category| %>
+            <li><%= link_to category.name, posts_path(category) %></li>
+          <% end %>
+          </ul>
+
+          <br>
+          <h4><strong>FALE CONOSCO</strong></h4>
+          <span><%= link_to 'minhafecrista@gmail.com', '' %></span>
+        </div>
+
+        <div class="col-md-3">
+          <H4><strong>MIDIAS SOCIAIS</strong></H4>
+          <p style="font-size: 16px;">Acompanhe nossas redes sociais.</p>
+          <br>
+
+          <ul class="list-unstyled list-inline">
+            <li>
+              <%= link_to '', target: '_blank' do %>
+                <i class="fab fa-facebook-f"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to '', target: '_blank' do %>
+                <i class="fab fa-twitter"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to '', target: '_blank' do %>
+                <i class="fab fa-instagram"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to '', target: '_blank' do %>
+                <i class="fab fa-snapchat-ghost"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to '', target: '_blank' do %>
+                <i class="fab fa-youtube"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to '', target: '_blank' do %>
+                <i class="fas fa-rss"></i>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

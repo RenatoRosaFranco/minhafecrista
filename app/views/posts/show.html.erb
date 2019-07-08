@@ -1,0 +1,36 @@
+<% provide :title, @post.title %>
+
+<div class="container" style="margin-top: 80px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-12">
+        <div class="col-md-12">
+          <ul class="breadcrumb">
+            <li><%= link_to 'Home', root_path %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-9 col-md-offset-1">
+        <div id="title">
+          <h1><%= @post.title %></h1>
+          <p><%= @post.description %></p>
+        </div>
+
+        <div id="content">
+          <%= @post.content %>
+        </div>
+
+        <div id="tags">
+          <% @post.tags.split(/\s/).each do |tag| %>
+            <span class="badge"><%= tag %></span>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="comment">
+        <%= render partial: 'shared/disqus' %>
+      </div>
+    </div>
+  </div>
+</div>
