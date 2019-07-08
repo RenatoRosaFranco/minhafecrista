@@ -6,30 +6,47 @@
       <div class="col-md-12">
         <div class="col-md-12">
           <ul class="breadcrumb">
-            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'Home',  root_path %></li>
+            <li><%= link_to 'Posts', posts_path %></li>
+            <li><%= link_to  @post.title, post_path(@post) %></li>
           </ul>
         </div>
       </div>
 
       <div class="col-md-9 col-md-offset-1">
         <div id="title">
-          <h1><%= @post.title %></h1>
-          <p><%= @post.description %></p>
+          <div class="col-md-8">
+            <h1><%= @post.title %></h1>
+            <p><%= @post.description %></p>
+            <span><b>5</b> Min de Leitura</span>
+          </div>
+          <div class="col-md-4">
+            <% if @post.user.present? %>
+              <h1><%= @post.user.name %></h1>
+              <p>há <%= link_to time_ago_in_words(@post.created_at) %></p>
+            <% end %>
+          </div>
         </div>
 
-        <div id="content">
-          <%= @post.content %>
+        <div class="row">
+          <div id="content">
+            <%= @post.content %>
+          </div>
         </div>
 
-        <div id="tags">
-          <% @post.tags.split(/\s/).each do |tag| %>
-            <span class="badge"><%= tag %></span>
-          <% end %>
+        <div class="row">
+          <div id="tags">
+            <% @post.tags.split(/\s/).each do |tag| %>
+              <span class="badge"><%= tag %></span>
+            <% end %>
+          </div>
         </div>
       </div>
 
-      <div id="comment">
-        <%= render partial: 'shared/disqus' %>
+      <div class="row">
+        <div id="comment">
+          <%= render partial: 'shared/disqus' %>
+        </div>
       </div>
     </div>
   </div>
