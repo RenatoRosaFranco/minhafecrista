@@ -5,8 +5,6 @@ ruby '2.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -33,6 +31,7 @@ gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'friendly_id'
 gem 'devise'
+gem 'pg'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -48,6 +47,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'awesome_print'
   gem 'rails_admin'
+  gem 'sqlite3'
 end
 
 group :development do
