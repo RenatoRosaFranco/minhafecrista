@@ -48,6 +48,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'awesome_print'
   gem 'sqlite3'
+  gem 'rails-erd'
 end
 
 group :development do

@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   self.primary_key = 'id'
 
   belongs_to :category
+  belongs_to :user
 
   def self.mount_tags_collection
     @collection_tags ||= []

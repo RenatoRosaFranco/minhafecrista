@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddColumnUserIdToCategory < ActiveRecord::Migration[5.2]
   def change
     add_reference :categories, :user, foreign_key: true

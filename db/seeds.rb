@@ -8,6 +8,21 @@
 
 puts '\nStart Running Seeds \n'
 
+# User
+# @implemented
+User.destroy_all
+User.create(
+        [
+            {
+                email: 'renato_ny@live.com',
+                password: 'rubyHero18',
+                password_confirmation: 'rubyHero18'
+            }
+        ]
+)
+
+# Category
+# @implemented
 Category.destroy_all
 Category.create([
     {
